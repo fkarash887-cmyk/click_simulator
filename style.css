@@ -1,0 +1,29 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #1e1e2f;
+    color: white;
+}
+
+button {
+    font-size: 20px;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+}
+
+#clickBtn {
+    background: #4caf50;
+    color: white;
+}
+
+#upgradeBtn {
+    background: #ff9800;
+    color: black;
+}
+
+.shop {
+    margin-top: 30px;
+}
