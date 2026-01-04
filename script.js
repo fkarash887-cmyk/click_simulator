@@ -1,68 +1,77 @@
-let count = Number(localStorage.getItem("count")) || 0;
-let power = Number(localStorage.getItem("power")) || 1;
-let auto = Number(localStorage.getItem("auto")) || 0;
-let multiplier = Number(localStorage.getItem("multiplier")) || 1;
+// ===== ОСНОВНЫЕ ПЕРЕМЕННЫЕ =====
+let clicks = 0;          // общее количество кликов
+let power = 1;           // сила одного клика
+let auto = 0;            // количество автокликеров
+let multiplier = 1;      // множитель клика
 
-let powerPrice = Number(localStorage.getItem("powerPrice")) || 10;
-let autoPrice = Number(localStorage.getItem("autoPrice")) || 50;
-let multiPrice = Number(localStorage.getItem("multiPrice")) || 200;
+// цены
+let powerPrice = 10;
+let autoPrice = 50;
+let multiPrice = 200;
 
+// ===== ПОЛУЧАЕМ ЭЛЕМЕНТЫ СО СТРАНИЦЫ =====
 const countEl = document.getElementById("count");
+const clickBtn = document.getElementById("clickBtn");
+
 const powerPriceEl = document.getElementById("powerPrice");
 const autoPriceEl = document.getElementById("autoPrice");
 const multiPriceEl = document.getElementById("multiPrice");
 
-function update() {
-    countEl.textContent = count;
+// ===== ОБНОВЛЕНИЕ ТЕКСТА НА СТРАНИЦЕ =====
+function updateUI() {
+    countEl.textContent = Math.floor(clicks);
     powerPriceEl.textContent = powerPrice;
     autoPriceEl.textContent = autoPrice;
     multiPriceEl.textContent = multiPrice;
-
-    localStorage.setItem("count", count);
-    localStorage.setItem("power", power);
-    localStorage.setItem("auto", auto);
-    localStorage.setItem("multiplier", multiplier);
-    localStorage.setItem("powerPrice", powerPrice);
-    localStorage.setItem("autoPrice", autoPrice);
-    localStorage.setItem("multiPrice", multiPrice);
 }
 
-document.getElementById("clickBtn").onclick = () => {
-    count += power * multiplier;
-    update();
-};
+// ===== КЛИК ПО КНОПКЕ =====
+clickBtn.addEventListener("click", () => {
+    clicks += power * multiplier;
+    updateUI();
+});
 
+// ===== ПОКУПКА СИЛЫ КЛИКА =====
 function buyPower() {
-    if (count >= powerPrice) {
-        count -= powerPrice;
-        power++;
+    if (clicks >= powerPrice) {
+        clicks -= powerPrice;
+        power += 1;
         powerPrice = Math.floor(powerPrice * 1.5);
-        update();
+        updateUI();
+    } else {
+        alert("❌ Недостаточно кликов!");
     }
 }
 
+// ===== ПОКУПКА АВТОКЛИКЕРА =====
 function buyAuto() {
-    if (count >= autoPrice) {
-        count -= autoPrice;
-        auto++;
+    if (clicks >= autoPrice) {
+        clicks -= autoPrice;
+        auto += 1;
         autoPrice = Math.floor(autoPrice * 1.7);
-        update();
+        updateUI();
+    } else {
+        alert("❌ Недостаточно кликов!");
     }
 }
 
+// ===== ПОКУПКА МНОЖИТЕЛЯ =====
 function buyMultiplier() {
-    if (count >= multiPrice) {
-        count -= multiPrice;
+    if (clicks >= multiPrice) {
+        clicks -= multiPrice;
         multiplier *= 2;
-        multiPrice = Math.floor(multiPrice * 3);
-        update();
+        multiPrice = Math.floor(multiPrice * 2.5);
+        updateUI();
+    } else {
+        alert("❌ Недостаточно кликов!");
     }
 }
 
-// автокликер
+// ===== АВТОКЛИКЕР КАЖДУЮ СЕКУНДУ =====
 setInterval(() => {
-    count += auto * multiplier;
-    update();
+    clicks += auto * power * multiplier;
+    updateUI();
 }, 1000);
 
-update();
+// стартовое обновление
+updateUI();
