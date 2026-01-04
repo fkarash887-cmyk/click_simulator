@@ -12,14 +12,18 @@
 <p>Клики: <span id="count">0</span></p>
 
 <button id="clickBtn">КЛИК!</button>
-
 <div class="shop">
-    <h2>Магазин</h2>
-    <button id="upgradeBtn">
-        Улучшение (+1 к клику) — цена: <span id="price">10</span>
+    <h2>🛒 Магазин</h2>
+
+    <button onclick="buyPower()">
+        💪 Сила клика (+1) — <span id="powerPrice">10</span>
+    </button>
+
+    <button onclick="buyAuto()">
+        🤖 Автокликер (+1/сек) — <span id="autoPrice">50</span>
+    </button>
+
+    <button onclick="buyMultiplier()">
+        ⚡ Множитель x2 — <span id="multiPrice">200</span>
     </button>
 </div>
-
-<script src="script.js"></script>
-</body>
-</html>
