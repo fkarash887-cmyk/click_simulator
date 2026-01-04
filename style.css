@@ -1,29 +1,47 @@
+/* ===== ОБЩИЕ НАСТРОЙКИ ===== */
 body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Comic Sans MS", "Trebuchet MS", cursive;
+    background: linear-gradient(135deg, #a1ffce, #faffd1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ===== КОНТЕЙНЕР ===== */
+.game {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 25px;
+    box-shadow: 0 15px 0 #d6d6d6;
     text-align: center;
-    background: #1e1e2f;
-    color: white;
+    width: 350px;
 }
 
-button {
-    font-size: 20px;
-    padding: 15px 30px;
-    margin: 10px;
-    cursor: pointer;
-    border-radius: 10px;
-    border: none;
+/* ===== ЗАГОЛОВКИ ===== */
+h1 {
+    margin-top: 0;
+    font-size: 32px;
 }
 
+h2 {
+    margin-bottom: 15px;
+}
+
+/* ===== СЧЁТЧИК ===== */
+p {
+    font-size: 22px;
+    margin: 15px 0;
+}
+
+/* ===== КНОПКА КЛИКА ===== */
 #clickBtn {
-    background: #4caf50;
-    color: white;
-}
-
-#upgradeBtn {
-    background: #ff9800;
-    color: black;
-}
-
-.shop {
-    margin-top: 30px;
-}
+    font-size: 26px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    background: #ffcc00;
+    cursor: pointer;
+    box-shadow: 0 6px 0 #cc9900;
+    transition: transfo
