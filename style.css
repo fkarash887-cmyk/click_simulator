@@ -54,9 +54,28 @@ body {
     display: flex;
     flex-direction: column;
 }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
 
 .footer {
-    margin-top: auto; /* прижимает footer к низу */
+    margin-top: auto;
     background-color: #0d1117;
     color: #c9d1d9;
     padding: 15px;
@@ -66,8 +85,4 @@ body {
 .footer a {
     color: #58a6ff;
     text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
 }
