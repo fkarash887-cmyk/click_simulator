@@ -45,3 +45,29 @@ p {
     cursor: pointer;
     box-shadow: 0 6px 0 #cc9900;
     transition: transfo
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto; /* прижимает footer к низу */
+    background-color: #0d1117;
+    color: #c9d1d9;
+    padding: 15px;
+    text-align: center;
+}
+
+.footer a {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
