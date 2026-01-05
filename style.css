@@ -1,16 +1,20 @@
 /* ===== ОБЩИЕ НАСТРОЙКИ ===== */
-body {
+html, body {
     margin: 0;
     min-height: 100vh;
     font-family: "Comic Sans MS", "Trebuchet MS", cursive;
     background: linear-gradient(135deg, #a1ffce, #faffd1);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-/* ===== КОНТЕЙНЕР ===== */
+/* ===== ОСНОВНАЯ СТРУКТУРА ===== */
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+/* ===== КОНТЕЙНЕР ИГРЫ ===== */
 .game {
+    margin: auto; /* центр по вертикали и горизонтали */
     background: #ffffff;
     padding: 30px 40px;
     border-radius: 25px;
@@ -44,36 +48,15 @@ p {
     background: #ffcc00;
     cursor: pointer;
     box-shadow: 0 6px 0 #cc9900;
-    transition: transfo
-html, body {
-    height: 100%;
-    margin: 0;
+    transition: transform 0.1s ease;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-html, body {
-    height: 100%;
-    margin: 0;
+#clickBtn:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 #cc9900;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-}
-
+/* ===== FOOTER ===== */
 .footer {
     margin-top: auto;
     background-color: #0d1117;
@@ -85,13 +68,4 @@ body {
 .footer a {
     color: #58a6ff;
     text-decoration: none;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-.footer {
-    margin-top: auto;
 }
